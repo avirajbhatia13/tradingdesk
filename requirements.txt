@@ -1,0 +1,7 @@
+# The research engine's dependencies, and nothing else. The live desk also
+# needs fastapi, uvicorn, websockets, cryptography and the broker SDKs; none of
+# that is in this repository.
+duckdb==1.5.5
+pyarrow==25.0.1
+numpy==2.5.2
+pytest==9.1.1

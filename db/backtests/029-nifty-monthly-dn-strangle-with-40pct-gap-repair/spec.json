@@ -1,0 +1,86 @@
+{
+  "name": "NIFTY monthly DN strangle: WITH 40pct gap repair",
+  "underlying": "NIFTY",
+  "start": "2024-10-01",
+  "end": "2026-07-28",
+  "spec": {
+    "name": "NIFTY monthly DN strangle: WITH 40pct gap repair",
+    "stop_loss": null,
+    "target": 4600.0,
+    "stop_loss_pct": null,
+    "target_pct": null,
+    "trail_stop": null,
+    "trail_stop_pct": null,
+    "trail_trigger": null,
+    "trail_trigger_pct": null,
+    "breakeven_trigger": null,
+    "breakeven_trigger_pct": null,
+    "per_leg_stop_pct": null,
+    "per_leg_stop_points": null,
+    "per_leg_action": "all",
+    "hold_days": 20,
+    "re_entries": 0,
+    "re_entry_gap_minutes": 1,
+    "re_entry_on": "stop",
+    "min_atm_iv": null,
+    "max_atm_iv": null,
+    "gap_pct_min": null,
+    "gap_pct_max": null,
+    "day_move_pct_min": null,
+    "day_move_pct_max": null,
+    "expiry_flag": "WEEK",
+    "expiry_index": 0,
+    "expiry_kind": "monthly",
+    "min_dte": 5,
+    "max_dte": 26,
+    "min_session_bars": 300,
+    "lot_size": 75,
+    "lot_calendar": true,
+    "slippage_points": 0.5,
+    "adjust": {
+      "rules": [
+        {
+          "trigger": "gap",
+          "threshold": 0.4,
+          "unit": "%",
+          "action": "roll-cheap-to-expensive"
+        }
+      ],
+      "max_adjustments": null,
+      "no_crossover": true,
+      "wings": "breakeven"
+    },
+    "entry_time": "11:00",
+    "exit_time": "15:15",
+    "weekdays": null,
+    "legs": [
+      {
+        "opt_type": "CE",
+        "side": "SELL",
+        "lots": 1,
+        "restrike": false,
+        "moneyness": 0,
+        "select": {
+          "rule": "delta",
+          "target": 0.2
+        }
+      },
+      {
+        "opt_type": "PE",
+        "side": "SELL",
+        "lots": 1,
+        "restrike": false,
+        "moneyness": 0,
+        "select": {
+          "rule": "delta",
+          "target": 0.2
+        }
+      }
+    ],
+    "costs": {
+      "brokerage_per_order": 20.0,
+      "charge_brokerage": true
+    }
+  },
+  "notes": "Testing the hypothesis that the 40% gap repair needs RUNWAY to be right: the source strategy is a BANKNIFTY MONTHLY cycle with ~25 days to expiry, and on the 2-day NIFTY weekly hold (runs 021 vs 023-025) adjusting destroyed the edge monotonically. This is the treatment arm of a controlled pair: identical entry and target to the control, the only difference is the repair. ENTRY RULE: the source's 'skip the first two days, deploy on the 3rd' expressed as a days-to-expiry band (dte 5..26) plus a 20-session hold, which yields one position per monthly cycle. That rule became expressible only after the 21 Aug 2026 fix. RULES 3-5 EXPRESSED DIRECTLY: 40% premium-gap roll, no-crossover stop at the straddle, iron-fly wings at the straddle breakevens. SUBSTITUTIONS: support/resistance -> 20-delta; '11:00-13:50' -> fixed 11:00; the 40% threshold is measured on the credit AT ENTRY, the literal reading of the source. SAMPLE IS THIN: ~20 trades. Tests the mechanism, not the edge. Treatment arm, pairs with control run 027."
+}

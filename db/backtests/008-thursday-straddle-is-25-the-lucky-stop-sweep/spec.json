@@ -1,0 +1,85 @@
+{
+  "name": "Thursday straddle: is 25% the lucky stop?",
+  "underlying": "NIFTY",
+  "kind": "sweep",
+  "start": "2021-08-16",
+  "end": "2026-08-14",
+  "spec": {
+    "name": "Thursday straddle: is 25% the lucky stop?",
+    "stop_loss": null,
+    "target": null,
+    "stop_loss_pct": null,
+    "target_pct": null,
+    "trail_stop": null,
+    "trail_stop_pct": null,
+    "trail_trigger": null,
+    "trail_trigger_pct": null,
+    "breakeven_trigger": null,
+    "breakeven_trigger_pct": null,
+    "per_leg_stop_pct": null,
+    "per_leg_stop_points": null,
+    "per_leg_action": "all",
+    "re_entries": 0,
+    "re_entry_gap_minutes": 1,
+    "re_entry_on": "stop",
+    "min_atm_iv": null,
+    "max_atm_iv": null,
+    "gap_pct_min": null,
+    "gap_pct_max": null,
+    "day_move_pct_min": null,
+    "day_move_pct_max": null,
+    "expiry_flag": "WEEK",
+    "min_session_bars": 300,
+    "lot_size": 75,
+    "slippage_points": 0.5,
+    "entry_time": "09:20",
+    "exit_time": "15:15",
+    "weekdays": [
+      3
+    ],
+    "legs": [
+      {
+        "opt_type": "CE",
+        "side": "SELL",
+        "lots": 1,
+        "restrike": false,
+        "moneyness": 0,
+        "select": {
+          "rule": "moneyness",
+          "moneyness": 0
+        }
+      },
+      {
+        "opt_type": "PE",
+        "side": "SELL",
+        "lots": 1,
+        "restrike": false,
+        "moneyness": 0,
+        "select": {
+          "rule": "moneyness",
+          "moneyness": 0
+        }
+      }
+    ],
+    "costs": {
+      "brokerage_per_order": 20.0,
+      "charge_brokerage": true
+    }
+  },
+  "axes": {
+    "stop_loss_pct": [
+      "0.15",
+      "0.2",
+      "0.25",
+      "0.3",
+      "0.35",
+      "0.4"
+    ],
+    "exit_time": [
+      "14:00",
+      "14:45",
+      "15:15"
+    ]
+  },
+  "notes": "Run 004 made +64,898 at a 25% stop. Checking whether that is a plateau or a spike."
+}

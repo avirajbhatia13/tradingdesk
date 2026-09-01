@@ -1,0 +1,25 @@
+{
+  "name": "Book with DN weekly strangle",
+  "underlying": "NIFTY",
+  "kind": "portfolio",
+  "start": "2021-08-16",
+  "end": "2026-08-14",
+  "allocations": [
+    {
+      "strategy": "dn-strangle-nifty-weekly-20d-friday",
+      "size": 1,
+      "name": "DN strangle NIFTY weekly 20d Friday"
+    },
+    {
+      "strategy": "iron-condor-3-8",
+      "size": 1,
+      "name": "Iron condor 3/8"
+    },
+    {
+      "strategy": "short-straddle-held-3-sessions",
+      "size": 1,
+      "name": "Short straddle held 3 sessions"
+    }
+  ],
+  "notes": "What the new delta-neutral weekly strangle (021) does to the existing book: margin netting plus drawdown cancellation. It correlates -0.10 with the condor and +0.34 with the held straddle."
+}

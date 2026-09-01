@@ -1,0 +1,1591 @@
+{
+  "underlying": "NIFTY",
+  "series": "front monthly expiry, dte 5..26",
+  "period": {
+    "start": "2024-10-01",
+    "end": "2026-07-28",
+    "years": 1.82,
+    "sessions": 21
+  },
+  "assumptions": {
+    "lot_size": 75,
+    "lot_calendar": true,
+    "lot_size_assumed_sessions": 0,
+    "legs": 2,
+    "lots_total": 2,
+    "lots_per_leg": [
+      1
+    ],
+    "structure": "SELL CE 20 delta, SELL PE 20 delta \u00b7 held 20 sessions",
+    "slippage_points_per_leg_per_side": 0.5,
+    "brokerage_per_order": 20.0,
+    "entry_time": "11:00",
+    "exit_time": "15:15",
+    "stop_loss": null,
+    "target": 4600.0,
+    "stop_loss_pct": null,
+    "target_pct": null,
+    "trail_stop": null,
+    "trail_stop_pct": null,
+    "trail_trigger": null,
+    "trail_trigger_pct": null,
+    "breakeven_trigger": null,
+    "breakeven_trigger_pct": null,
+    "per_leg_stop_pct": null,
+    "per_leg_stop_points": null,
+    "per_leg_action": "all",
+    "re_entries": 0,
+    "re_entry_on": "stop",
+    "hold_days": 20,
+    "sessions_held_avg": 0.0,
+    "truncated_at_expiry": 0,
+    "adjust": {
+      "rules": [
+        {
+          "trigger": "gap",
+          "threshold": 0.4,
+          "unit": "%",
+          "action": "roll-cheap-to-expensive"
+        }
+      ],
+      "max_adjustments": null,
+      "no_crossover": true,
+      "wings": "breakeven"
+    },
+    "adjust_rules": [
+      "when the premium gap between the two sides reaches 40% of the entry credit, close the decayed side and re-sell it at the premium the tested side is now trading",
+      "never rolling a leg past the other leg's strike; once they meet the position is a straddle and adjusting stops",
+      "buying wings at the straddle's breakevens once it becomes one, which caps the loss"
+    ],
+    "adjustments_total": 77,
+    "adjusted_trades": 18,
+    "became_straddle": 14,
+    "wings_added": 14,
+    "filters": {},
+    "weekdays": null,
+    "min_session_bars": 300,
+    "restrike_legs": []
+  },
+  "selection": {
+    "days": 431,
+    "resolved": 21,
+    "clamped_days": 0,
+    "unresolved_days": 0,
+    "missing_expiry_days": 0,
+    "per_leg": {
+      "ce_d0_2": {
+        "rule": "20 delta",
+        "side": "CE",
+        "resolved": 21,
+        "clamped": 0,
+        "moneyness_min": 10,
+        "moneyness_max": 26,
+        "moneyness_median": 14
+      },
+      "pe_d0_2": {
+        "rule": "20 delta",
+        "side": "PE",
+        "resolved": 21,
+        "clamped": 0,
+        "moneyness_min": 11,
+        "moneyness_max": 25,
+        "moneyness_median": 16
+      }
+    },
+    "note": ""
+  },
+  "skipped": {
+    "weekday": 0,
+    "short_session": 0,
+    "no_entry": 0,
+    "filtered": 0,
+    "truncated_at_expiry": 0,
+    "lot_size_assumed": 0
+  },
+  "headline": {
+    "net_pnl": -21017.61,
+    "gross_pnl": -11344.0,
+    "total_charges": 9673.61,
+    "roi_on_peak_margin_pct": -13.94,
+    "roi_on_median_margin_pct": -16.1,
+    "capital_floor": 204872.72,
+    "roi_on_capital_pct": -10.26,
+    "cagr_on_capital_pct": -5.77,
+    "annualised_on_peak_pct": -7.66,
+    "cagr_on_peak_pct": -7.91
+  },
+  "margin": {
+    "peak": 150772.28,
+    "median": 130550.42,
+    "average": 132618.81,
+    "minimum": 115401.02,
+    "per_lot_median": 65275.21,
+    "samples": 21,
+    "note": "SPAN + exposure estimate, same model as the live builder",
+    "capital_floor": 204872.72
+  },
+  "trade_stats": {
+    "trades": 21,
+    "wins": 15,
+    "losses": 6,
+    "win_rate_pct": 71.4,
+    "loss_rate_pct": 28.6,
+    "average": -1000.84,
+    "median": 4104.46,
+    "average_win": 4035.82,
+    "average_loss": -13592.48,
+    "largest_win": 4485.54,
+    "largest_loss": -37177.42,
+    "profit_factor": 0.74,
+    "expectancy": -1000.84,
+    "reward_to_risk": 0.3,
+    "max_win_streak": 6,
+    "max_loss_streak": 3,
+    "avg_monthly_pnl": -1167.65
+  },
+  "risk": {
+    "max_drawdown": -54100.44,
+    "max_drawdown_pct_of_peak_margin": 35.88,
+    "drawdown_decline_days": 85,
+    "drawdown_decline_trades": 3,
+    "drawdown_recovered": false,
+    "drawdown_recovery_days": null,
+    "drawdown_recovery_trades": null,
+    "still_underwater_trades": 15,
+    "return_to_max_drawdown": -0.39,
+    "sharpe": -1.57,
+    "sortino": -1.37
+  },
+  "charges": {
+    "brokerage": 5880.0,
+    "stt": 1550.97,
+    "exchange": 965.79,
+    "sebi": 2.75,
+    "stamp": 41.37,
+    "gst": 1232.74,
+    "total": 9673.61
+  },
+  "exit_reasons": {
+    "time": 7,
+    "stop": 0,
+    "target": 14,
+    "trail": 0,
+    "breakeven": 0,
+    "leg stop": 0
+  },
+  "days": [
+    {
+      "day": "2024-10-07",
+      "entry": "11:00",
+      "exit": "15:15",
+      "entry_price": -220.4,
+      "exit_price": 0.0,
+      "gross": -991.25,
+      "charges": 496.99,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 38.6,
+        "exchange": 27.38,
+        "sebi": 0.08,
+        "stamp": 1.19,
+        "gst": 69.74
+      },
+      "pnl": -1488.24,
+      "mfe": 4357.5,
+      "mae": -1437.5,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 25600,
+        "PE1": 24000,
+        "PE2": 24650,
+        "CE3": 25300,
+        "PE4": 25050,
+        "CE5": 25100,
+        "PE6": 25100,
+        "CE7": 25600,
+        "PE8": 24600
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 7006,
+      "stale_pct": 0.0,
+      "missing_pct": 0.2,
+      "deviation": 10.91,
+      "flags": [
+        "outlier"
+      ]
+    },
+    {
+      "day": "2024-11-04",
+      "entry": "11:00",
+      "exit": "10:00",
+      "entry_price": -231.9,
+      "exit_price": 0.0,
+      "gross": 4626.0,
+      "charges": 488.64,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 35.45,
+        "exchange": 23.21,
+        "sebi": 0.07,
+        "stamp": 0.92,
+        "gst": 68.99
+      },
+      "pnl": 4137.36,
+      "mfe": 4676.0,
+      "mae": -2748.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 24750,
+        "PE1": 22900,
+        "PE2": 23600,
+        "PE3": 24100,
+        "PE4": 24400,
+        "CE5": 24550,
+        "CE6": 24400,
+        "CE7": 25050,
+        "PE8": 23750
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 4816,
+      "stale_pct": 0.0,
+      "missing_pct": 19.3,
+      "deviation": 0.06,
+      "flags": [
+        "gapped"
+      ]
+    },
+    {
+      "day": "2025-01-06",
+      "entry": "11:00",
+      "exit": "15:15",
+      "entry_price": -200.8,
+      "exit_price": 0.0,
+      "gross": 1569.0,
+      "charges": 546.93,
+      "charge_breakdown": {
+        "brokerage": 400.0,
+        "stt": 40.69,
+        "exchange": 27.94,
+        "sebi": 0.08,
+        "stamp": 1.17,
+        "gst": 77.04
+      },
+      "pnl": 1022.07,
+      "mfe": 3677.75,
+      "mae": -2821.25,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 24550,
+        "PE1": 23050,
+        "CE2": 24200,
+        "PE3": 23400,
+        "CE4": 23950,
+        "PE5": 23650,
+        "CE6": 23750,
+        "CE7": 23650,
+        "CE8": 24300,
+        "PE9": 23000
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 7006,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 6.01,
+      "flags": [
+        "outlier"
+      ]
+    },
+    {
+      "day": "2025-02-01",
+      "entry": "11:00",
+      "exit": "09:39",
+      "entry_price": -220.5,
+      "exit_price": 0.0,
+      "gross": -2815.25,
+      "charges": 504.8,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 42.36,
+        "exchange": 30.66,
+        "sebi": 0.09,
+        "stamp": 1.36,
+        "gst": 70.34
+      },
+      "pnl": -3320.05,
+      "mfe": 1845.0,
+      "mae": -3341.25,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 24350,
+        "PE1": 22700,
+        "CE2": 23850,
+        "PE3": 23200,
+        "PE4": 23500,
+        "PE5": 23800,
+        "CE6": 23800,
+        "CE7": 24400,
+        "PE8": 23200
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5545,
+      "stale_pct": 0.0,
+      "missing_pct": 38.4,
+      "deviation": 14.48,
+      "flags": [
+        "outlier",
+        "gapped"
+      ]
+    },
+    {
+      "day": "2025-03-03",
+      "entry": "11:00",
+      "exit": "14:02",
+      "entry_price": -188.4,
+      "exit_price": 0.0,
+      "gross": -12930.0,
+      "charges": 672.97,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 130.4,
+        "exchange": 95.89,
+        "sebi": 0.27,
+        "stamp": 4.3,
+        "gst": 82.11
+      },
+      "pnl": -13602.98,
+      "mfe": 2497.5,
+      "mae": -12780.0,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 22650,
+        "PE1": 21350,
+        "PE2": 21850,
+        "CE3": 22350,
+        "PE4": 22100,
+        "PE5": 22300,
+        "PE6": 22350,
+        "CE7": 22900,
+        "PE8": 21800
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5058,
+      "stale_pct": 0.0,
+      "missing_pct": 34.9,
+      "deviation": 34.54,
+      "flags": [
+        "outlier",
+        "gapped"
+      ]
+    },
+    {
+      "day": "2025-04-01",
+      "entry": "11:00",
+      "exit": "11:00",
+      "entry_price": -181.45,
+      "exit_price": 0.0,
+      "gross": -36723.75,
+      "charges": 453.67,
+      "charge_breakdown": {
+        "brokerage": 280.0,
+        "stt": 57.52,
+        "exchange": 53.17,
+        "sebi": 0.15,
+        "stamp": 2.83,
+        "gst": 60.0
+      },
+      "pnl": -37177.42,
+      "mfe": 4257.0,
+      "mae": -37649.25,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 23850,
+        "PE1": 22500,
+        "CE2": 23450,
+        "CE3": 23000,
+        "CE4": 22500,
+        "CE5": 23250,
+        "PE6": 21750
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 3376,
+      "stale_pct": 0.0,
+      "missing_pct": 77.3,
+      "deviation": 80.51,
+      "flags": [
+        "outlier",
+        "gapped"
+      ]
+    },
+    {
+      "day": "2025-05-05",
+      "entry": "11:00",
+      "exit": "09:30",
+      "entry_price": -248.25,
+      "exit_price": 0.0,
+      "gross": 4612.5,
+      "charges": 126.96,
+      "charge_breakdown": {
+        "brokerage": 80.0,
+        "stt": 18.62,
+        "exchange": 11.43,
+        "sebi": 0.03,
+        "stamp": 0.42,
+        "gst": 16.46
+      },
+      "pnl": 4485.54,
+      "mfe": 4687.5,
+      "mae": -195.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 25250,
+        "PE1": 23450
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 1036,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 0.74,
+      "flags": []
+    },
+    {
+      "day": "2025-06-02",
+      "entry": "11:00",
+      "exit": "11:16",
+      "entry_price": -231.95,
+      "exit_price": 0.0,
+      "gross": 4575.0,
+      "charges": 124.71,
+      "charge_breakdown": {
+        "brokerage": 80.0,
+        "stt": 17.4,
+        "exchange": 10.59,
+        "sebi": 0.03,
+        "stamp": 0.38,
+        "gst": 16.31
+      },
+      "pnl": 4450.29,
+      "mfe": 4650.0,
+      "mae": -2287.5,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 25500,
+        "PE1": 23700
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 767,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.67,
+      "flags": []
+    },
+    {
+      "day": "2025-07-07",
+      "entry": "11:00",
+      "exit": "12:51",
+      "entry_price": -184.25,
+      "exit_price": 0.0,
+      "gross": 4548.75,
+      "charges": 118.07,
+      "charge_breakdown": {
+        "brokerage": 80.0,
+        "stt": 13.82,
+        "exchange": 8.09,
+        "sebi": 0.02,
+        "stamp": 0.28,
+        "gst": 15.86
+      },
+      "pnl": 4430.68,
+      "mfe": 4623.75,
+      "mae": -195.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 26100,
+        "PE1": 24750
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 1237,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.64,
+      "flags": []
+    },
+    {
+      "day": "2025-08-04",
+      "entry": "11:00",
+      "exit": "09:22",
+      "entry_price": -163.3,
+      "exit_price": 0.0,
+      "gross": 5028.75,
+      "charges": 567.67,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 78.05,
+        "exchange": 52.92,
+        "sebi": 0.15,
+        "stamp": 2.19,
+        "gst": 74.35
+      },
+      "pnl": 4461.08,
+      "mfe": 5178.75,
+      "mae": -8921.25,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 25250,
+        "PE1": 23950,
+        "CE2": 24850,
+        "PE3": 24300,
+        "PE4": 24550,
+        "CE5": 24650,
+        "CE6": 24550,
+        "CE7": 25050,
+        "PE8": 24050
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5528,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 0.7,
+      "flags": []
+    },
+    {
+      "day": "2025-09-04",
+      "entry": "11:00",
+      "exit": "09:40",
+      "entry_price": -154.7,
+      "exit_price": 0.0,
+      "gross": 4548.75,
+      "charges": 174.39,
+      "charge_breakdown": {
+        "brokerage": 120.0,
+        "stt": 18.72,
+        "exchange": 11.52,
+        "sebi": 0.03,
+        "stamp": 0.43,
+        "gst": 23.68
+      },
+      "pnl": 4374.36,
+      "mfe": 4623.75,
+      "mae": -90.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 25400,
+        "PE1": 24200,
+        "PE2": 24700
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 2171,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.53,
+      "flags": []
+    },
+    {
+      "day": "2025-10-03",
+      "entry": "11:00",
+      "exit": "15:15",
+      "entry_price": -152.05,
+      "exit_price": 0.0,
+      "gross": -12382.5,
+      "charges": 599.53,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 91.04,
+        "exchange": 68.1,
+        "sebi": 0.19,
+        "stamp": 3.1,
+        "gst": 77.09
+      },
+      "pnl": -12982.03,
+      "mfe": 982.5,
+      "mae": -15281.25,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 25300,
+        "PE1": 24200,
+        "PE2": 24550,
+        "PE3": 24850,
+        "PE4": 25050,
+        "PE5": 25250,
+        "CE6": 25250,
+        "CE7": 25700,
+        "PE8": 24800
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5941,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 33.32,
+      "flags": [
+        "outlier"
+      ]
+    },
+    {
+      "day": "2025-10-30",
+      "entry": "11:00",
+      "exit": "12:16",
+      "entry_price": -180.1,
+      "exit_price": 0.0,
+      "gross": 4601.25,
+      "charges": 178.7,
+      "charge_breakdown": {
+        "brokerage": 120.0,
+        "stt": 21.06,
+        "exchange": 13.14,
+        "sebi": 0.04,
+        "stamp": 0.49,
+        "gst": 23.97
+      },
+      "pnl": 4422.55,
+      "mfe": 4676.25,
+      "mae": -427.5,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 26550,
+        "PE1": 25200,
+        "CE2": 26100
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 1577,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 0.62,
+      "flags": []
+    },
+    {
+      "day": "2025-12-04",
+      "entry": "11:00",
+      "exit": "10:17",
+      "entry_price": -155.8,
+      "exit_price": 0.0,
+      "gross": 4525.5,
+      "charges": 577.6,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 83.27,
+        "exchange": 56.76,
+        "sebi": 0.16,
+        "stamp": 2.36,
+        "gst": 75.05
+      },
+      "pnl": 3947.9,
+      "mfe": 4675.5,
+      "mae": -1227.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 26650,
+        "PE1": 25450,
+        "PE2": 25850,
+        "CE3": 26400,
+        "CE4": 26100,
+        "CE5": 25950,
+        "PE6": 25950,
+        "CE7": 26450,
+        "PE8": 25450
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 3708,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.31,
+      "flags": []
+    },
+    {
+      "day": "2026-01-01",
+      "entry": "11:00",
+      "exit": "11:29",
+      "entry_price": -143.95,
+      "exit_price": 0.0,
+      "gross": -12333.75,
+      "charges": 650.39,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 118.4,
+        "exchange": 87.27,
+        "sebi": 0.25,
+        "stamp": 3.92,
+        "gst": 80.55
+      },
+      "pnl": -12984.15,
+      "mfe": 2186.25,
+      "mae": -22605.0,
+      "exit_reason": "time",
+      "strikes": {
+        "CE0": 26650,
+        "PE1": 25600,
+        "PE2": 26000,
+        "PE3": 26250,
+        "CE4": 26500,
+        "CE5": 26350,
+        "PE6": 26350,
+        "CE7": 26800,
+        "PE8": 25900
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5655,
+      "stale_pct": 0.0,
+      "missing_pct": 23.2,
+      "deviation": 33.33,
+      "flags": [
+        "outlier",
+        "gapped"
+      ]
+    },
+    {
+      "day": "2026-01-29",
+      "entry": "11:00",
+      "exit": "09:15",
+      "entry_price": -210.15,
+      "exit_price": 0.0,
+      "gross": 4855.5,
+      "charges": 608.22,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 99.82,
+        "exchange": 68.24,
+        "sebi": 0.19,
+        "stamp": 2.85,
+        "gst": 77.12
+      },
+      "pnl": 4247.28,
+      "mfe": 4985.5,
+      "mae": -10182.25,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 26000,
+        "PE1": 24450,
+        "PE2": 25000,
+        "CE3": 25700,
+        "PE4": 25300,
+        "CE5": 25500,
+        "CE6": 25300,
+        "CE7": 26000,
+        "PE8": 24600
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 4771,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.28,
+      "flags": []
+    },
+    {
+      "day": "2026-03-04",
+      "entry": "11:00",
+      "exit": "12:35",
+      "entry_price": -310.5,
+      "exit_price": 0.0,
+      "gross": 4673.5,
+      "charges": 412.9,
+      "charge_breakdown": {
+        "brokerage": 200.0,
+        "stt": 96.27,
+        "exchange": 65.81,
+        "sebi": 0.19,
+        "stamp": 2.75,
+        "gst": 47.88
+      },
+      "pnl": 4260.6,
+      "mfe": 4738.5,
+      "mae": -9252.75,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 25350,
+        "PE1": 23150,
+        "CE2": 24400,
+        "PE3": 23650,
+        "PE4": 24100
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 1596,
+      "stale_pct": 0.0,
+      "missing_pct": 3.6,
+      "deviation": 0.3,
+      "flags": []
+    },
+    {
+      "day": "2026-04-02",
+      "entry": "11:00",
+      "exit": "09:27",
+      "entry_price": -304.5,
+      "exit_price": 0.0,
+      "gross": 5083.0,
+      "charges": 623.12,
+      "charge_breakdown": {
+        "brokerage": 320.0,
+        "stt": 156.78,
+        "exchange": 72.47,
+        "sebi": 0.2,
+        "stamp": 2.98,
+        "gst": 70.68
+      },
+      "pnl": 4459.88,
+      "mfe": 5213.0,
+      "mae": -6555.25,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 23550,
+        "PE1": 21200,
+        "PE2": 21400,
+        "PE3": 22100,
+        "PE4": 22600,
+        "PE5": 23550,
+        "CE6": 24500,
+        "PE7": 22600
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 5158,
+      "stale_pct": 0.0,
+      "missing_pct": 50.7,
+      "deviation": 0.69,
+      "flags": [
+        "gapped"
+      ]
+    },
+    {
+      "day": "2026-04-30",
+      "entry": "11:00",
+      "exit": "13:27",
+      "entry_price": -267.45,
+      "exit_price": 0.0,
+      "gross": 4504.5,
+      "charges": 706.42,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 179.46,
+        "exchange": 83.42,
+        "sebi": 0.23,
+        "stamp": 3.45,
+        "gst": 79.86
+      },
+      "pnl": 3798.08,
+      "mfe": 4634.5,
+      "mae": -598.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 24800,
+        "PE1": 22750,
+        "PE2": 23600,
+        "CE3": 24450,
+        "PE4": 24100,
+        "CE5": 24200,
+        "PE6": 24200,
+        "CE7": 24950,
+        "PE8": 23450
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 2023,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.6,
+      "flags": []
+    },
+    {
+      "day": "2026-06-04",
+      "entry": "11:00",
+      "exit": "10:54",
+      "entry_price": -214.85,
+      "exit_price": 0.0,
+      "gross": 4543.5,
+      "charges": 439.04,
+      "charge_breakdown": {
+        "brokerage": 240.0,
+        "stt": 99.89,
+        "exchange": 45.71,
+        "sebi": 0.13,
+        "stamp": 1.86,
+        "gst": 51.45
+      },
+      "pnl": 4104.46,
+      "mfe": 4608.5,
+      "mae": -2109.25,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 24250,
+        "PE1": 22600,
+        "CE2": 23750,
+        "PE3": 23000,
+        "CE4": 23500,
+        "CE5": 23300
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 1870,
+      "stale_pct": 0.0,
+      "missing_pct": 0.1,
+      "deviation": 0.0,
+      "flags": []
+    },
+    {
+      "day": "2026-07-02",
+      "entry": "11:00",
+      "exit": "09:16",
+      "entry_price": -176.15,
+      "exit_price": 0.0,
+      "gross": 4537.0,
+      "charges": 601.88,
+      "charge_breakdown": {
+        "brokerage": 360.0,
+        "stt": 113.33,
+        "exchange": 52.08,
+        "sebi": 0.15,
+        "stamp": 2.13,
+        "gst": 74.2
+      },
+      "pnl": 3935.12,
+      "mfe": 4667.0,
+      "mae": -1365.0,
+      "exit_reason": "target",
+      "strikes": {
+        "CE0": 24750,
+        "PE1": 23400,
+        "PE2": 23900,
+        "PE3": 24250,
+        "CE4": 24550,
+        "CE5": 24350,
+        "CE6": 24250,
+        "CE7": 24750,
+        "PE8": 23750
+      },
+      "attempt": 0,
+      "sessions_held": 0,
+      "bars": 4772,
+      "stale_pct": 0.0,
+      "missing_pct": 0.0,
+      "deviation": 0.33,
+      "flags": []
+    }
+  ],
+  "quality": {
+    "outlier": 7,
+    "stale": 0,
+    "gapped": 6,
+    "truncated": 0,
+    "days": 21,
+    "flagged": 9,
+    "flagged_pnl": -71935.56,
+    "net": -21017.61,
+    "net_excluding_flagged": 50917.95,
+    "median_pnl": 4104.46,
+    "robust_sigma": 512.74,
+    "outlier_cutoff": 2563.68,
+    "thresholds": {
+      "outlier_sigmas": 5.0,
+      "stale_share_pct": 40.0,
+      "gapped_share_pct": 10.0
+    },
+    "note": "Flags mark days worth opening, not days that are wrong. A stale or gapped day means the price path under it was thin, so that day's exit was decided against a quote that may not have been live."
+  },
+  "monthly": [
+    {
+      "key": "2024-10",
+      "trades": 1,
+      "pnl": -1488.24,
+      "average": -1488.24,
+      "win_rate": 0.0,
+      "best": -1488.24,
+      "worst": -1488.24
+    },
+    {
+      "key": "2024-11",
+      "trades": 1,
+      "pnl": 4137.36,
+      "average": 4137.36,
+      "win_rate": 100.0,
+      "best": 4137.36,
+      "worst": 4137.36
+    },
+    {
+      "key": "2025-01",
+      "trades": 1,
+      "pnl": 1022.07,
+      "average": 1022.07,
+      "win_rate": 100.0,
+      "best": 1022.07,
+      "worst": 1022.07
+    },
+    {
+      "key": "2025-02",
+      "trades": 1,
+      "pnl": -3320.05,
+      "average": -3320.05,
+      "win_rate": 0.0,
+      "best": -3320.05,
+      "worst": -3320.05
+    },
+    {
+      "key": "2025-03",
+      "trades": 1,
+      "pnl": -13602.98,
+      "average": -13602.98,
+      "win_rate": 0.0,
+      "best": -13602.98,
+      "worst": -13602.98
+    },
+    {
+      "key": "2025-04",
+      "trades": 1,
+      "pnl": -37177.42,
+      "average": -37177.42,
+      "win_rate": 0.0,
+      "best": -37177.42,
+      "worst": -37177.42
+    },
+    {
+      "key": "2025-05",
+      "trades": 1,
+      "pnl": 4485.54,
+      "average": 4485.54,
+      "win_rate": 100.0,
+      "best": 4485.54,
+      "worst": 4485.54
+    },
+    {
+      "key": "2025-06",
+      "trades": 1,
+      "pnl": 4450.29,
+      "average": 4450.29,
+      "win_rate": 100.0,
+      "best": 4450.29,
+      "worst": 4450.29
+    },
+    {
+      "key": "2025-07",
+      "trades": 1,
+      "pnl": 4430.68,
+      "average": 4430.68,
+      "win_rate": 100.0,
+      "best": 4430.68,
+      "worst": 4430.68
+    },
+    {
+      "key": "2025-08",
+      "trades": 1,
+      "pnl": 4461.08,
+      "average": 4461.08,
+      "win_rate": 100.0,
+      "best": 4461.08,
+      "worst": 4461.08
+    },
+    {
+      "key": "2025-09",
+      "trades": 1,
+      "pnl": 4374.36,
+      "average": 4374.36,
+      "win_rate": 100.0,
+      "best": 4374.36,
+      "worst": 4374.36
+    },
+    {
+      "key": "2025-10",
+      "trades": 2,
+      "pnl": -8559.48,
+      "average": -4279.74,
+      "win_rate": 50.0,
+      "best": 4422.55,
+      "worst": -12982.03
+    },
+    {
+      "key": "2025-12",
+      "trades": 1,
+      "pnl": 3947.9,
+      "average": 3947.9,
+      "win_rate": 100.0,
+      "best": 3947.9,
+      "worst": 3947.9
+    },
+    {
+      "key": "2026-01",
+      "trades": 2,
+      "pnl": -8736.87,
+      "average": -4368.43,
+      "win_rate": 50.0,
+      "best": 4247.28,
+      "worst": -12984.15
+    },
+    {
+      "key": "2026-03",
+      "trades": 1,
+      "pnl": 4260.6,
+      "average": 4260.6,
+      "win_rate": 100.0,
+      "best": 4260.6,
+      "worst": 4260.6
+    },
+    {
+      "key": "2026-04",
+      "trades": 2,
+      "pnl": 8257.96,
+      "average": 4128.98,
+      "win_rate": 100.0,
+      "best": 4459.88,
+      "worst": 3798.08
+    },
+    {
+      "key": "2026-06",
+      "trades": 1,
+      "pnl": 4104.46,
+      "average": 4104.46,
+      "win_rate": 100.0,
+      "best": 4104.46,
+      "worst": 4104.46
+    },
+    {
+      "key": "2026-07",
+      "trades": 1,
+      "pnl": 3935.12,
+      "average": 3935.12,
+      "win_rate": 100.0,
+      "best": 3935.12,
+      "worst": 3935.12
+    }
+  ],
+  "yearly": [
+    {
+      "key": "2024",
+      "trades": 2,
+      "pnl": 2649.12,
+      "average": 1324.56,
+      "win_rate": 50.0,
+      "best": 4137.36,
+      "worst": -1488.24
+    },
+    {
+      "key": "2025",
+      "trades": 12,
+      "pnl": -35488.0,
+      "average": -2957.33,
+      "win_rate": 66.7,
+      "best": 4485.54,
+      "worst": -37177.42
+    },
+    {
+      "key": "2026",
+      "trades": 7,
+      "pnl": 11821.27,
+      "average": 1688.75,
+      "win_rate": 85.7,
+      "best": 4459.88,
+      "worst": -12984.15
+    }
+  ],
+  "weekday": [
+    {
+      "key": "Monday",
+      "trades": 8,
+      "pnl": 7895.81,
+      "average": 986.98,
+      "win_rate": 75.0,
+      "best": 4485.54,
+      "worst": -13602.98
+    },
+    {
+      "key": "Tuesday",
+      "trades": 1,
+      "pnl": -37177.42,
+      "average": -37177.42,
+      "win_rate": 0.0,
+      "best": -37177.42,
+      "worst": -37177.42
+    },
+    {
+      "key": "Wednesday",
+      "trades": 1,
+      "pnl": 4260.6,
+      "average": 4260.6,
+      "win_rate": 100.0,
+      "best": 4260.6,
+      "worst": 4260.6
+    },
+    {
+      "key": "Thursday",
+      "trades": 9,
+      "pnl": 20305.48,
+      "average": 2256.16,
+      "win_rate": 88.9,
+      "best": 4459.88,
+      "worst": -12984.15
+    },
+    {
+      "key": "Friday",
+      "trades": 1,
+      "pnl": -12982.03,
+      "average": -12982.03,
+      "win_rate": 0.0,
+      "best": -12982.03,
+      "worst": -12982.03
+    },
+    {
+      "key": "Weekend",
+      "trades": 1,
+      "pnl": -3320.05,
+      "average": -3320.05,
+      "win_rate": 0.0,
+      "best": -3320.05,
+      "worst": -3320.05
+    }
+  ],
+  "month_of_year": [
+    {
+      "key": "January",
+      "trades": 3,
+      "pnl": -7714.79,
+      "average": -2571.6,
+      "win_rate": 66.7,
+      "best": 4247.28,
+      "worst": -12984.15
+    },
+    {
+      "key": "February",
+      "trades": 1,
+      "pnl": -3320.05,
+      "average": -3320.05,
+      "win_rate": 0.0,
+      "best": -3320.05,
+      "worst": -3320.05
+    },
+    {
+      "key": "March",
+      "trades": 2,
+      "pnl": -9342.38,
+      "average": -4671.19,
+      "win_rate": 50.0,
+      "best": 4260.6,
+      "worst": -13602.98
+    },
+    {
+      "key": "April",
+      "trades": 3,
+      "pnl": -28919.45,
+      "average": -9639.82,
+      "win_rate": 66.7,
+      "best": 4459.88,
+      "worst": -37177.42
+    },
+    {
+      "key": "May",
+      "trades": 1,
+      "pnl": 4485.54,
+      "average": 4485.54,
+      "win_rate": 100.0,
+      "best": 4485.54,
+      "worst": 4485.54
+    },
+    {
+      "key": "June",
+      "trades": 2,
+      "pnl": 8554.75,
+      "average": 4277.38,
+      "win_rate": 100.0,
+      "best": 4450.29,
+      "worst": 4104.46
+    },
+    {
+      "key": "July",
+      "trades": 2,
+      "pnl": 8365.8,
+      "average": 4182.9,
+      "win_rate": 100.0,
+      "best": 4430.68,
+      "worst": 3935.12
+    },
+    {
+      "key": "August",
+      "trades": 1,
+      "pnl": 4461.08,
+      "average": 4461.08,
+      "win_rate": 100.0,
+      "best": 4461.08,
+      "worst": 4461.08
+    },
+    {
+      "key": "September",
+      "trades": 1,
+      "pnl": 4374.36,
+      "average": 4374.36,
+      "win_rate": 100.0,
+      "best": 4374.36,
+      "worst": 4374.36
+    },
+    {
+      "key": "October",
+      "trades": 3,
+      "pnl": -10047.72,
+      "average": -3349.24,
+      "win_rate": 33.3,
+      "best": 4422.55,
+      "worst": -12982.03
+    },
+    {
+      "key": "November",
+      "trades": 1,
+      "pnl": 4137.36,
+      "average": 4137.36,
+      "win_rate": 100.0,
+      "best": 4137.36,
+      "worst": 4137.36
+    },
+    {
+      "key": "December",
+      "trades": 1,
+      "pnl": 3947.9,
+      "average": 3947.9,
+      "win_rate": 100.0,
+      "best": 3947.9,
+      "worst": 3947.9
+    }
+  ],
+  "montecarlo": {
+    "paths": 2000,
+    "trades": 21,
+    "actual": {
+      "total_pnl": -21017.61,
+      "max_drawdown": -54100.44
+    },
+    "shuffled_drawdown": {
+      "p5": -68330.73,
+      "p25": -58424.67,
+      "p50": -50780.39,
+      "p75": -44979.33,
+      "p95": -37177.42
+    },
+    "bootstrap_drawdown": {
+      "p5": -118668.46,
+      "p25": -73034.71,
+      "p50": -47767.44,
+      "p75": -28426.17,
+      "p95": -12984.15
+    },
+    "bootstrap_total": {
+      "p5": -103555.0,
+      "p25": -50103.58,
+      "p50": -16845.25,
+      "p75": 12857.41,
+      "p95": 47275.77
+    },
+    "probability_of_loss_pct": 64.2,
+    "drawdown_vs_typical_ordering": 1.07,
+    "drawdown_vs_worst_ordering": 0.79,
+    "losses_cluster": false,
+    "capital_floor_p95": 219103.01
+  },
+  "curves": {
+    "equity": [
+      {
+        "day": "2024-10-07",
+        "equity": -1488.24
+      },
+      {
+        "day": "2024-11-04",
+        "equity": 2649.12
+      },
+      {
+        "day": "2025-01-06",
+        "equity": 3671.2
+      },
+      {
+        "day": "2025-02-01",
+        "equity": 351.14
+      },
+      {
+        "day": "2025-03-03",
+        "equity": -13251.83
+      },
+      {
+        "day": "2025-04-01",
+        "equity": -50429.25
+      },
+      {
+        "day": "2025-05-05",
+        "equity": -45943.71
+      },
+      {
+        "day": "2025-06-02",
+        "equity": -41493.42
+      },
+      {
+        "day": "2025-07-07",
+        "equity": -37062.73
+      },
+      {
+        "day": "2025-08-04",
+        "equity": -32601.65
+      },
+      {
+        "day": "2025-09-04",
+        "equity": -28227.29
+      },
+      {
+        "day": "2025-10-03",
+        "equity": -41209.32
+      },
+      {
+        "day": "2025-10-30",
+        "equity": -36786.77
+      },
+      {
+        "day": "2025-12-04",
+        "equity": -32838.88
+      },
+      {
+        "day": "2026-01-01",
+        "equity": -45823.02
+      },
+      {
+        "day": "2026-01-29",
+        "equity": -41575.74
+      },
+      {
+        "day": "2026-03-04",
+        "equity": -37315.15
+      },
+      {
+        "day": "2026-04-02",
+        "equity": -32855.27
+      },
+      {
+        "day": "2026-04-30",
+        "equity": -29057.19
+      },
+      {
+        "day": "2026-06-04",
+        "equity": -24952.73
+      },
+      {
+        "day": "2026-07-02",
+        "equity": -21017.61
+      }
+    ],
+    "drawdown": [
+      {
+        "day": "2024-10-07",
+        "drawdown": -1488.24
+      },
+      {
+        "day": "2024-11-04",
+        "drawdown": 0.0
+      },
+      {
+        "day": "2025-01-06",
+        "drawdown": 0.0
+      },
+      {
+        "day": "2025-02-01",
+        "drawdown": -3320.05
+      },
+      {
+        "day": "2025-03-03",
+        "drawdown": -16923.03
+      },
+      {
+        "day": "2025-04-01",
+        "drawdown": -54100.44
+      },
+      {
+        "day": "2025-05-05",
+        "drawdown": -49614.9
+      },
+      {
+        "day": "2025-06-02",
+        "drawdown": -45164.61
+      },
+      {
+        "day": "2025-07-07",
+        "drawdown": -40733.93
+      },
+      {
+        "day": "2025-08-04",
+        "drawdown": -36272.85
+      },
+      {
+        "day": "2025-09-04",
+        "drawdown": -31898.49
+      },
+      {
+        "day": "2025-10-03",
+        "drawdown": -44880.52
+      },
+      {
+        "day": "2025-10-30",
+        "drawdown": -40457.97
+      },
+      {
+        "day": "2025-12-04",
+        "drawdown": -36510.07
+      },
+      {
+        "day": "2026-01-01",
+        "drawdown": -49494.22
+      },
+      {
+        "day": "2026-01-29",
+        "drawdown": -45246.94
+      },
+      {
+        "day": "2026-03-04",
+        "drawdown": -40986.34
+      },
+      {
+        "day": "2026-04-02",
+        "drawdown": -36526.46
+      },
+      {
+        "day": "2026-04-30",
+        "drawdown": -32728.38
+      },
+      {
+        "day": "2026-06-04",
+        "drawdown": -28623.92
+      },
+      {
+        "day": "2026-07-02",
+        "drawdown": -24688.81
+      }
+    ],
+    "margin": [
+      133891.57,
+      125521.39,
+      128396.51,
+      126289.49,
+      119711.65,
+      125822.53,
+      129468.1,
+      130550.42,
+      140065.62,
+      136473.94,
+      139663.12,
+      140181.12,
+      144335.0,
+      148154.12,
+      150772.28,
+      138605.08,
+      126713.7,
+      115401.02,
+      125252.84,
+      126448.77,
+      133276.82
+    ]
+  },
+  "engine": {
+    "bars_scanned": 142173,
+    "elapsed_ms": 270880.1
+  }
+}

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# The market-data lake and its DuckDB catalogue. Not in this repository — see
+# the README. These lines exist so that a clone pointed at a real lake does not
+# accidentally commit 5 GB of Parquet.
+db/lake/
+db/*.db
+db/*.db-journal
